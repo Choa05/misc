@@ -67,9 +67,9 @@ public class Matrix {
 				if (i == j) {
 					a[i][j] = v[i] * v[j] * (float) (1.0 - Math.cos (theta)) + (float) Math.cos (theta);
 				} else if (j == (i + 1) % 3){
-					a[i][j] = v[i] * v[j] * (float) (1.0 - Math.cos (theta)) - v[(j + 1) % 3] * (float) Math.cos (theta);
+					a[i][j] = v[i] * v[j] * (float) (1.0 - Math.cos (theta)) - v[(j + 1) % 3] * (float) Math.sin (theta);
 				} else {
-					a[i][j] = v[i] * v[j] * (float) (1.0 - Math.cos (theta)) + v[(j + 1) % 3] * (float) Math.cos (theta);
+					a[i][j] = v[i] * v[j] * (float) (1.0 - Math.cos (theta)) + v[(j + 1) % 3] * (float) Math.sin (theta);
 				}
 			}
 		}
