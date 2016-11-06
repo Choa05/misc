@@ -41,9 +41,20 @@ public class Combination {
 		}
 	}
 	
-	public static void printResult () {
-		for(String s : result){
-			System.out.println(s);
+	public static void printResult () throws IOException {
+		FileWritter out = null;
+
+		try {
+			out = new FileWriter("output.txt");
+			if (result.size() != 0) {
+				for (String s : result) {
+					out.write(s);
+				}
+			}
+		} finally {
+			if (out != null) {
+				out.close();
+			}
 		}
 	}
 }
